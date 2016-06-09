@@ -1,0 +1,14 @@
+drwxr-xr-x   5 ctmove   psacln       4096 Nov 19 06:12 .
+drwxr-xr-x  20 ctmove   psacln       4096 Dec 21 08:58 ..
+-rw-r--r--   1 ctmove   psacln        296 Nov 19 06:10 AppDelegate.h
+-rw-r--r--   1 ctmove   psacln       2026 Nov 19 06:10 AppDelegate.m
+drwxr-xr-x   2 ctmove   psacln       4096 Nov 19 06:11 Base.lproj
+-rw-r--r--   1 ctmove   psacln       1356 Nov 19 06:10 HTML5VideoAutoplayApp-Info.plist
+-rw-r--r--   1 ctmove   psacln        344 Nov 19 06:10 HTML5VideoAutoplayApp-Prefix.pch
+-rw-r--r--   1 ctmove   psacln    7279304 Nov 19 06:12 IcelandWaterfall.mp4
+drwxr-xr-x   4 ctmove   psacln       4096 Nov 19 06:12 Images.xcassets
+-rw-r--r--   1 ctmove   psacln        234 Nov 19 06:11 ViewController.h
+-rw-r--r--   1 ctmove   psacln        990 Nov 19 06:11 ViewController.m
+drwxr-xr-x   2 ctmove   psacln       4096 Nov 19 06:12 en.lproj
+-rw-r--r--   1 ctmove   psacln        170 Nov 19 06:10 html5videoautoplay.html
+-rw-r--r--   1 ctmove   psacln        356 Nov 19 06:11 main.m

@@ -1,0 +1,8 @@
+drwxr-xr-x   3 ctmove   psacln       4096 Aug 11 12:28 .
+drwxr-xr-x  11 ctmove   psacln       4096 Aug 11 12:28 ..
+-rw-r--r--   1 ctmove   psacln       1266 Aug  2 12:18 block.inc
+drwxr-xr-x   2 ctmove   psacln       4096 Aug 11 12:28 corners
+-rw-r--r--   1 ctmove   psacln        619 Aug  2 12:18 default.inc
+-rw-r--r--   1 ctmove   psacln       1277 Aug  2 12:18 list.inc
+-rw-r--r--   1 ctmove   psacln        661 Aug  2 12:18 naked.inc
+-rw-r--r--   1 ctmove   psacln      12168 Aug  2 12:18 stylizer.inc

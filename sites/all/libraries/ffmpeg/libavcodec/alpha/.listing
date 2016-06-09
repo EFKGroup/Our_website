@@ -1,0 +1,17 @@
+drwxr-xr-x   2 ctmove   psacln       4096 Aug 30 20:34 .
+drwxr-xr-x  13 ctmove   psacln      49152 Aug 31 04:01 ..
+-rw-r--r--   1 ctmove   psacln        702 Jun 19  2015 Makefile
+-rw-r--r--   1 ctmove   psacln       9327 Nov 30  2014 asm.h
+-rw-r--r--   1 ctmove   psacln       1460 Jun 19  2015 blockdsp_alpha.c
+-rw-r--r--   1 ctmove   psacln       9691 Mar 14  2015 hpeldsp_alpha.c
+-rw-r--r--   1 ctmove   psacln       1042 Mar 14  2015 hpeldsp_alpha.h
+-rw-r--r--   1 ctmove   psacln       2996 Mar 14  2015 hpeldsp_alpha_asm.S
+-rw-r--r--   1 ctmove   psacln       4279 Jun 19  2015 idctdsp_alpha.c
+-rw-r--r--   1 ctmove   psacln       1400 Jun 19  2015 idctdsp_alpha.h
+-rw-r--r--   1 ctmove   psacln       4948 Jun 19  2015 idctdsp_alpha_asm.S
+-rw-r--r--   1 ctmove   psacln       9407 Jun 19  2015 me_cmp_alpha.c
+-rw-r--r--   1 ctmove   psacln       6202 Jun 19  2015 me_cmp_mvi_asm.S
+-rw-r--r--   1 ctmove   psacln       3336 Jun 19  2015 mpegvideo_alpha.c
+-rw-r--r--   1 ctmove   psacln       2319 Jun 19  2015 pixblockdsp_alpha.c
+-rw-r--r--   1 ctmove   psacln       2358 Mar 14  2015 regdef.h
+-rw-r--r--   1 ctmove   psacln       7454 Jun 19  2015 simple_idct_alpha.c

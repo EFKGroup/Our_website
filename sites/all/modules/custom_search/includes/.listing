@@ -1,0 +1,7 @@
+drwxr-xr-x   2 ctmove   psacln       4096 Aug 11 12:24 .
+drwxr-xr-x   6 ctmove   psacln       4096 Aug 11 12:24 ..
+-rw-r--r--   1 ctmove   psacln       1760 Jun  5  2015 apachesolr_search.inc
+-rw-r--r--   1 ctmove   psacln      18913 Jun  5  2015 forms.inc
+-rw-r--r--   1 ctmove   psacln        523 Jun  5  2015 google_appliance.inc
+-rw-r--r--   1 ctmove   psacln        835 Jun  5  2015 luceneapi_node.inc
+-rw-r--r--   1 ctmove   psacln       1469 Jun  5  2015 search_api.inc

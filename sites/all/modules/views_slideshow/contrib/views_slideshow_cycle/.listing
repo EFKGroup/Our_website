@@ -1,0 +1,10 @@
+drwxr-xr-x   4 ctmove   psacln       4096 Nov  6 13:02 .
+drwxr-xr-x   3 ctmove   psacln       4096 Nov  6 13:02 ..
+-rw-r--r--   1 ctmove   psacln        461 Nov  6 13:02 README.txt
+drwxr-xr-x   2 ctmove   psacln       4096 Nov  6 13:02 js
+drwxr-xr-x   2 ctmove   psacln       4096 Nov  6 13:02 theme
+-rw-r--r--   1 ctmove   psacln        550 Nov  6 13:02 views_slideshow_cycle.css
+-rw-r--r--   1 ctmove   psacln        475 Nov  6 13:02 views_slideshow_cycle.info
+-rw-r--r--   1 ctmove   psacln       2267 Nov  6 13:02 views_slideshow_cycle.install
+-rw-r--r--   1 ctmove   psacln       4297 Nov  6 13:02 views_slideshow_cycle.module
+-rw-r--r--   1 ctmove   psacln      22928 Nov  6 13:02 views_slideshow_cycle.views_slideshow.inc

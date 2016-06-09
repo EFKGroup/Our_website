@@ -1,0 +1,10 @@
+drwxr-xr-x   2 ctmove   psacln       4096 Aug 11 12:25 .
+drwxr-xr-x  11 ctmove   psacln       4096 Aug 11 12:25 ..
+-rw-r--r--   1 ctmove   psacln        877 Jun  5  2015 feeds_news.features.field_base.inc
+-rw-r--r--   1 ctmove   psacln       1800 Jun  5  2015 feeds_news.features.field_instance.inc
+-rw-r--r--   1 ctmove   psacln       1109 Jun  5  2015 feeds_news.features.inc
+-rw-r--r--   1 ctmove   psacln       3376 Jun  5  2015 feeds_news.feeds_importer_default.inc
+-rw-r--r--   1 ctmove   psacln        887 Jun  5  2015 feeds_news.info
+-rw-r--r--   1 ctmove   psacln         88 Jun  5  2015 feeds_news.module
+-rw-r--r--   1 ctmove   psacln       5217 Jun  5  2015 feeds_news.test
+-rw-r--r--   1 ctmove   psacln       4474 Jun  5  2015 feeds_news.views_default.inc

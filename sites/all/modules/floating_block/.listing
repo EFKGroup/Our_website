@@ -1,0 +1,10 @@
+drwxr-xr-x   3 ctmove   psacln       4096 Sep 11 13:45 .
+drwxr-xrwx  98 ctmove   psacln       4096 Nov 30 09:56 ..
+-rw-r--r--   1 ctmove   psacln      18092 Sep  8 13:59 LICENSE.txt
+-rw-r--r--   1 ctmove   psacln       1303 Sep  8 13:59 README.txt
+-rw-r--r--   1 ctmove   psacln       3841 Sep  8 13:59 floating_block.admin.inc
+-rw-r--r--   1 ctmove   psacln        365 Sep  8 13:59 floating_block.info
+-rw-r--r--   1 ctmove   psacln        843 Sep  8 13:59 floating_block.install
+-rw-r--r--   1 ctmove   psacln       8739 Sep  8 13:59 floating_block.js
+-rw-r--r--   1 ctmove   psacln       3872 Sep  8 13:59 floating_block.module
+drwxr-xr-x   2 ctmove   psacln       4096 Sep 11 13:45 tests

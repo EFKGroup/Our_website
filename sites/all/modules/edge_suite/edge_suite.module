@@ -1,0 +1,640 @@
+<?php
+/**
+ * @file
+ * Edge suite primary module file.
+ */
+
+require_once 'includes/edge_suite_file.inc';
+require_once 'includes/edge_suite.entity.inc';
+require_once 'includes/edge_suite.theme.inc';
+require_once 'includes/edge_suite.field.inc';
+require_once 'includes/edge_suite.views.inc';
+
+/**
+ * Implements hook_menu().
+ */
+function edge_suite_menu() {
+  $items['admin/config/media/edge_suite'] = array(
+    'title' => 'Edge Suite',
+    'description' => 'Configure general Edge Suite settings.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('edge_suite_settings'),
+    'access arguments' => array('administer edge suite'),
+    'file' => 'includes/edge_suite.admin.inc',
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  $items['admin/structure/edge_suite'] = array(
+    'title' => 'Edge Suite',
+    'description' => 'Import, manage and configure your Edge content.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('edge_suite_admin_form'),
+    'access arguments' => array('administer edge suite'),
+    'file' => 'includes/edge_suite.admin.inc',
+  );
+
+  // Composition definition actions: add instance, rebuild, reupload, delete.
+  $items['admin/structure/edge_suite/%/add'] = array(
+    'title' => 'Add instance',
+    'description' => 'Add a new instance of a compositions, e.g. a block.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('edge_suite_instance_form_add', 3),
+    'access callback' => 'edge_suite_access',
+    'access arguments' => array('create instance', 3),
+    'file' => 'includes/edge_suite.admin.inc',
+  );
+
+  $items['admin/structure/edge_suite/%/edit/%'] = array(
+    'title' => 'Edit composition instance',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('edge_suite_instance_form_edit', 3, 5),
+    'access callback' => 'edge_suite_access',
+    'access arguments' => array('edit instance', 3, 5),
+    'file' => 'includes/edge_suite.admin.inc',
+  );
+
+  $items['admin/structure/edge_suite/%/edit/%/configure'] = array(
+    'title' => 'Edit composition',
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'context' => MENU_CONTEXT_INLINE,
+  );
+
+  $items['admin/structure/edge_suite/%/reupload'] = array(
+    'title' => 'Reupload composition',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('edge_suite_definition_reupload_confirm', 3),
+    'access callback' => 'edge_suite_access',
+    'access arguments' => array('reupload definition', 3),
+    'file' => 'includes/edge_suite.admin.inc',
+  );
+
+  $items['admin/structure/edge_suite/%/delete'] = array(
+    'title' => 'Delete composition',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('edge_suite_definition_delete_confirm', 3),
+    'access callback' => 'edge_suite_access',
+    'access arguments' => array('delete definition', 3),
+    'file' => 'includes/edge_suite.admin.inc',
+  );
+
+  $items['admin/structure/edge_suite/%/rebuild'] = array(
+    'title' => 'Rebuild composition',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('edge_suite_definition_rebuild_confirm', 3),
+    'access callback' => 'edge_suite_access',
+    'access arguments' => array('rebuild definition', 3),
+    'file' => 'includes/edge_suite.admin.inc',
+  );
+
+  // Composition instance actions: test, edit, delete.
+  $items['admin/structure/edge_suite/%/test/%'] = array(
+    'title' => 'Instance testing',
+    'description' => 'Testing of an instance',
+    'page callback' => 'edge_suite_instance_callback',
+    'page arguments' => array(5, 'testing'),
+    'access callback' => 'edge_suite_access',
+    'access arguments' => array('test instance', 3, 5),
+    'file' => 'includes/edge_suite.admin.inc',
+  );
+
+  $items['admin/structure/edge_suite/%/delete/%'] = array(
+    'title' => 'Delete composition instance',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('edge_suite_instance_delete_confirm', 3, 5),
+    'access callback' => 'edge_suite_access',
+    'access arguments' => array('delete instance', 3, 5),
+    'file' => 'includes/edge_suite.admin.inc',
+  );
+
+  $items['edge_suite/iframe/%'] = array(
+    'title' => 'Edge iframe',
+    'page callback' => 'edge_suite_instance_callback',
+    'page arguments' => array(2, 'iframe', 3),
+    'access callback' => 'edge_suite_access',
+    'access arguments' => array('view iframe', 3),
+  );
+
+  $items['edge_suite/iframe/data/%'] = array(
+    'title' => 'Edge iframe',
+    'page callback' => 'edge_suite_instance_callback',
+    'page arguments' => array(3, 'data'),
+    'access callback' => 'edge_suite_access',
+    'access arguments' => array('view iframe', 3),
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function edge_suite_permission() {
+  // Todo urgent: Implement permissions.
+  return array(
+    'administer edge suite' => array(
+      'title' => t('Administer Edge suite'),
+      'description' => t('Fully administrate Edge suite.'),
+      'restrict access' => TRUE,
+    ),
+  );
+}
+
+/**
+ * Check if the current user is allowed to perform the given operation.
+ *
+ * @param string $operation
+ *   The operation that should be checked
+ * @param int $definition_id
+ *   Composition definition id
+ * @param int $instance_id
+ *   Composition instance id
+ *
+ * @return bool
+ *   True if operation is allowed, false otherwise.
+ * @todo implement access callbacks and permissions.
+ */
+function edge_suite_access($operation = 'view', $definition_id = NULL, $instance_id = NULL) {
+  if (user_access('administer edge suite')) {
+    return TRUE;
+  }
+
+  if ($operation == 'view iframe') {
+    return TRUE;
+  }
+
+  return FALSE;
+
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function edge_suite_block_info() {
+  $blocks = array();
+  // Check if blocks are enabled.
+  if (variable_get('edge_suite_block_enable', TRUE)) {
+    // Get all available composition instances.
+    $query = db_select('edge_suite_instance', 'i');
+    $query->join('edge_suite_definition', 'd', 'i.definition_id = d.definition_id');
+    $rows = $query->fields('i')
+      ->fields('d')
+      ->condition('d.type', 'global')
+      ->execute();
+
+    // Provide a block for each composition instance.
+    if ($rows->rowCount() > 0) {
+      foreach ($rows as $row) {
+        // Use a prefix and the instance id to be able to identify the block
+        // when it's rendered.
+        $blocks['edge_suite_composition_block_' . $row->instance_id] = array(
+          'info' => t('Edge composition: @project - @label', array(
+            '@project' => $row->project_name,
+            '@label' => $row->label,
+          )),
+        );
+      }
+    }
+  }
+  return $blocks;
+}
+
+/**
+ * Implements block_view().
+ */
+function edge_suite_block_view($delta = '') {
+  $block = array(
+    'subject' => '',
+    'content' => '',
+  );
+
+  // Check if blocks are enabled.
+  if (variable_get('edge_suite_block_enable', TRUE)) {
+    // Extract the instance id from the delta.
+    $instance_id = edge_suite_delta_to_id($delta);
+
+    // Render composition.
+    if ($instance_id > 0) {
+      $instance = edge_suite_instance_load($instance_id);
+      if ($instance != NULL) {
+        $block['content'] = $instance->view();
+
+        // Add contextual link.
+        $block['content']['#contextual_links']['contextual_edge_suite'] = array(
+          'admin/structure/edge_suite',
+          array($instance->definition_id . '/edit/' . $instance->instance_id),
+        );
+      }
+    }
+  }
+
+  return $block;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function edge_suite_theme() {
+  $return = array(
+    // Theme functions in edge_suite.field.inc.
+    'edge_suite_widget' => array(
+      'render element' => 'element',
+    ),
+    'edge_suite_instance' => array(
+      'render element' => 'elements',
+    ),
+  );
+
+  // Add all composition view modes.
+  $view_modes = edge_suite_composition_view_modes(FALSE, TRUE);
+  unset($view_modes['stage']);
+  foreach ($view_modes as $key => $label) {
+    $return['edge_suite_view_' . $key] = array(
+      'variables' => array('instance' => NULL),
+    );
+  }
+  return $return;
+}
+
+/**
+ * Implements hook_module_implements_alter().
+ *
+ * Move edge suite hook alter execution to the end for some special cases.
+ */
+function edge_suite_module_implements_alter(&$implementations, $hook) {
+  if ($hook == 'token_info_alter') {
+    $group = $implementations['edge_suite'];
+    unset($implementations['edge_suite']);
+    $implementations['edge_suite'] = $group;
+  }
+}
+
+/**
+ * Implements hook_html_head_alter().
+ *
+ * This runs right before JS is added to the head, can't be used for footer js
+ * injection.
+ */
+function edge_suite_html_head_alter(&$head_elements) {
+  $edge_suite_js = &drupal_static('edge_suite_global_js', array());
+  if (!empty($edge_suite_js)) {
+
+    if (variable_get('edge_suite_xua_compatible', TRUE)) {
+      // Force the latest IE rendering engine.
+      $head_elements['chrome_frame'] = array(
+        '#type' => 'html_tag',
+        '#tag' => 'meta',
+        '#attributes' => array('http-equiv' => 'X-UA-Compatible', 'content' => 'IE=edge'),
+        '#weight' => -1001,
+      );
+    }
+
+    // Add edge suite js for all compositions that registered in a theme hooks.
+    edge_suite_init_javascript();
+  }
+
+}
+
+/**
+ * Set up all needed JS for rendering registered composition.
+ */
+function edge_suite_init_javascript() {
+  // Setup all the needed JS for edge suite. Compositions must have been
+  // registered in the global variable.
+  $global_js = &drupal_static('edge_suite_global_js', array());
+
+  // Todo: introduce constant or variable.
+  $group = 1000;
+  if (!empty($global_js)) {
+    $runtime_version = '';
+    $runtime_version_multiple = FALSE;
+    foreach ($global_js as $comp) {
+      if ($comp['runtime_version'] != '0.0.0') {
+        if ($comp['runtime_version'] != $runtime_version) {
+          if (!empty($runtime_version)) {
+            $runtime_version_multiple = TRUE;
+            // Fetch the latest runtime versions, others will be ignored.
+            if ($comp['runtime_version'] > $runtime_version) {
+              $runtime_version = $comp['runtime_version'];
+            }
+          }
+          else {
+            $runtime_version = $comp['runtime_version'];
+          }
+        }
+      }
+    }
+
+    if ($runtime_version_multiple && user_access('administer edge suite')) {
+      drupal_set_message(t('Multiple Edge Animate runtime versions found, please update older compositions (newest version detected: %version).', array('%version' => $runtime_version)));
+    }
+
+    // Process compositions with version prior to EA5.
+    if ($runtime_version < '5.0.0') {
+      // Add drupal-edge bridging javascript.
+      drupal_add_js(drupal_get_path('module', 'edge_suite') . '/edge_drupal.js',
+        array(
+          'group' => $group,
+          'weight' => -1,
+        )
+      );
+
+      // Get real base path to edge directory.
+      $edge_path = edge_suite_get_path('main', TRUE);
+
+      $js = 'window.AdobeEdge = window.AdobeEdge || {};';
+      $js .= 'window.AdobeEdge.pathPrefix = window.AdobeEdge.pathPrefix || {};';
+      $js .= "AdobeEdge.pathPrefix.libs = '" . $edge_path . "';";
+
+      $path_prefixes = array();
+      foreach ($global_js as $comp) {
+
+        // Ignore comps with other runtime versions.
+        if ($comp['runtime_version'] == $runtime_version || $comp['runtime_version'] == '0.0.0') {
+          // Add preloader.
+          drupal_add_js($comp['preloader'],
+            array(
+              'scope' => 'header',
+              'group' => $group,
+              'weight' => 1,
+            )
+          );
+
+          // Add path prefix.
+          $path_prefixes[] = "'" . $comp['composition_id'] . "' :" . "'" . $comp['project_path'] . "'";
+        }
+        else {
+          watchdog('edge_suite', 'Old runtime version found for composition %id, conflicting with newer EA version.', array('%id' => $comp['composition_id']));
+        }
+      }
+
+      // Register every composition with its path within the AdobeEdge variable
+      // so the path can be used by the drupal-edge bridging JS code to set up
+      // paths to all the libraries and media assets correctly.
+      $js .= "AdobeEdge.pathPrefix.comps = {" . implode(',', $path_prefixes) . "};";
+
+      // Add jQuery noConflict flag.
+      if (variable_get('edge_suite_jquery_noconflict', 1)) {
+        $js .= 'AdobeEdge.edgesuiteNoConflict = 1;';
+      }
+
+      // Add debug flag.
+      if (variable_get('edge_suite_debug_mode', 0)) {
+        $js .= 'AdobeEdge.edgesuiteDebug = 1;';
+      }
+    }
+    else {
+      $cdn_url = "//animate.adobe.com/runtime/" . $runtime_version . "/edge." . $runtime_version . ".min.js";
+      drupal_add_js($cdn_url,
+        array(
+          'scope' => 'header',
+          'group' => $group,
+          'weight' => -3,
+        )
+      );
+
+      $js = '';
+      foreach ($global_js as $comp) {
+        // Ignore comps with other runtime versions.
+        if ($comp['runtime_version'] == $runtime_version) {
+          $options = json_encode(array(
+            'htmlRoot' => $comp['project_path'] . '/',
+            'bScaleToParent' => 'true',
+          ));
+
+          // Prepare preloader and downlevel stage variables.
+          $preloader = isset($comp['preloader']) ? 'null' : '{}';
+          $dlstage = $preloader;
+
+          $js .= 'AdobeEdge.loadComposition("' . $comp['project_name'] . '", "' . $comp['composition_id'] . '", ' . $options . ', ' . $preloader . ', ' . $dlstage . ');';
+        }
+        else {
+          watchdog('edge_suite', 'Old runtime version found for composition %id, conflicting with newer EA version.', array('%id' => $comp['composition_id']));
+        }
+      }
+    }
+
+    drupal_add_js($js,
+      array(
+        'type' => 'inline',
+        'group' => $group,
+        'weight' => -2,
+      )
+    );
+
+  }
+}
+
+
+/**
+ * Http referer access check and node context retrieval.
+ *
+ * Function checks the http referer against the server name to provide minimal
+ * protection against direct iframe exposure. While checking the http referer
+ * it is also being checked if the refer refers to a node, which can be used
+ * as a node context (e.g. for data injection in iframes).
+ *
+ * @param object $node
+ *   Node context object read from the http referer.
+ *
+ * @return bool
+ *   False if access should be denied.
+ */
+function edge_suite_check_referer(&$node) {
+  // Todo urgent: Set up option!
+  $access = TRUE;
+  $referer_parts = explode('/', $_SERVER['HTTP_REFERER']);
+
+  if ($referer_parts > 3 && in_array($referer_parts[0], array('http:', 'https:'))) {
+    if ($referer_parts[2] == $_SERVER['SERVER_NAME']) {
+      $access = TRUE;
+    }
+    // Strip servername.
+    $path = check_plain(implode('/', array_slice($referer_parts, 3)));
+
+    // If the 4. part is empty then its the frontpage.
+    if (empty($path)) {
+      $path = variable_get('site_frontpage', '');
+    }
+
+    // Convert alias to realpath.
+    $path = drupal_get_normal_path($path);
+    if ($router_item = menu_get_item($path)) {
+      if ($router_item['access'] && $router_item['path'] == 'node/%' && isset($router_item['page_arguments'][0])) {
+        $node = $router_item['page_arguments'][0];
+      }
+    }
+  }
+  return $access;
+}
+
+
+/**
+ * Function to handle menu callbacks.
+ *
+ * @param int $instance_id
+ *   Id of the composition instance.
+ * @param string $mode
+ *   data, iframe or testing.
+ * @param string $security_token
+ *   iframe security token to deny direct requests.
+ *
+ * @return string
+ *   Fully rendered output
+ */
+function edge_suite_instance_callback($instance_id, $mode, $security_token = NULL) {
+  if (!in_array($mode, array('data', 'iframe', 'testing'))) {
+    return t('Not a valid view mode.');
+  }
+
+  $node_token_context = NULL;
+  if (!edge_suite_check_referer($node_token_context)) {
+    return NULL;
+  }
+
+  // Callback for test and iframe full page.
+  $instance_id = intval($instance_id);
+  if ($instance = edge_suite_instance_load($instance_id)) {
+    // Set token node context.
+    if ($node_token_context != NULL) {
+      $instance->setNodeTokenContext($node_token_context);
+    }
+    if ($mode == 'testing') {
+      $build = $instance->view();
+      return drupal_render($build);
+    }
+    elseif ($mode == 'iframe') {
+
+      if (variable_get('edge_suite_iframe_token', 1) && $security_token != edge_suite_get_iframe_token($instance) && $security_token != edge_suite_get_iframe_token($instance, TRUE)) {
+        print t('Expired iframe token');
+        watchdog('edge_suite', 'Expired iframe token', array(), WATCHDOG_WARNING);
+        return NULL;
+      }
+
+      // Get javascript storage and clean it out as its not needed.
+      $javascript = &drupal_static('drupal_add_js', array());
+      // Add a dummy entry so defaults are not being set.
+      $javascript = array('0' => NULL);
+
+      // Render composition instance inline inside an iframe.
+      $instance_view = $instance->view('inline');
+      $content = drupal_render($instance_view);
+
+      // Initialize JS.
+      edge_suite_init_javascript();
+      $js = drupal_get_js();
+
+      // Output full HTML structure.
+      $full_html = edge_suite_render_full_page($content, $js);
+      print $full_html;
+
+      // Return null to get a clean exit.
+      return NULL;
+    }
+    elseif ($mode == 'data') {
+      // Only allow post requests, this rules out cross domain requests.
+      if (variable_get('edge_suite_iframe_data_force_post', 1) && (!isset($_POST['token']) || $_POST['token'] != TRUE)) {
+        return NULL;
+      }
+      $instance_id = intval($instance_id);
+      $instance = edge_suite_instance_load($instance_id);
+
+      $result = array(
+        'url' => edge_suite_get_iframe_url($instance),
+        'text' => $instance->instance('description', ''),
+        'width' => $instance->definition('width', 0),
+        'height' => $instance->definition('height', 0),
+      );
+      drupal_json_output($result);
+    }
+  }
+  return NULL;
+}
+
+/**
+ * Generates an iframe security token for the given instance.
+ *
+ * Todo: Document general idea.
+ *
+ * @param object $instance
+ *   Instance the security token should be generated for.
+ * @param bool $previous
+ *   Generates the token for the previous request time offset.
+ *
+ * @return string
+ *   Security token
+ */
+function edge_suite_get_iframe_token($instance, $previous = FALSE) {
+  $token_validity = variable_get('edge_suite_iframe_token_validity', 5);
+
+  // Basic instance token.
+  $token_key = $instance->definition_id . '_' . $instance->instance_id;
+
+  // Time token.
+  $request_token = REQUEST_TIME - REQUEST_TIME % $token_validity;
+
+  // Check previous bucket.
+  if ($previous) {
+    $request_token -= $token_validity;
+  }
+
+  $token_key .= '_' . $request_token;
+
+  return drupal_hmac_base64($token_key, drupal_get_private_key() . drupal_get_hash_salt());
+}
+
+/**
+ * Get instance iframe callback url.
+ */
+function edge_suite_get_iframe_url($instance) {
+  $url = base_path() . 'edge_suite/iframe/' . $instance->instance_id;
+
+  // Add iframe token validation.
+  if (variable_get('edge_suite_iframe_token', 1)) {
+    $token = edge_suite_get_iframe_token($instance);
+    $url .= '/' . $token;
+  }
+
+  return $url;
+}
+
+/***** HELPER FUNCTIONS *****/
+
+/**
+ * Extract the instance id from a delta used in an edge suite block.
+ *
+ * @param string $delta
+ *   The delta value of an edge suite block
+ *
+ * @return int
+ *   The id of the instance which is shown in the block
+ */
+function edge_suite_delta_to_id($delta) {
+  $id = -1;
+  $matches = array();
+
+  // Extract the key from the delta value.
+  $found = preg_match('/^edge_suite_composition_block_([0-9]*)/', $delta, $matches);
+  if ($found && count($matches) == 2) {
+    // Fetch id.
+    $id = intval($matches[1]);
+  }
+  return $id;
+}
+
+/**
+ * Views block info.
+ */
+function edge_suite_ctools_block_info($module, $delta, &$info) {
+  $info['category'] = t('Edge Suite');
+  $id = edge_suite_delta_to_id($delta);
+  if ($id >= 0) {
+    $found = preg_match('/^Edge composition:(.*)/', $info['title'], $matches);
+    if ($found && count($matches) == 2) {
+      $info['title'] = $matches[1];
+    }
+    // Todo: Add icon via $info['icon'].
+  }
+  else {
+    ctools_default_block_info($module, $delta, $info);
+  }
+}

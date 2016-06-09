@@ -1,0 +1,7 @@
+drwxr-xr-x   2 ctmove   psacln       4096 Aug 11 12:23 .
+drwxr-xrwx  98 ctmove   psacln       4096 Nov 30 09:56 ..
+-rw-r--r--   1 ctmove   psacln      18092 Aug  2 12:21 LICENSE.txt
+-rw-r--r--   1 ctmove   psacln       1408 Aug  2 12:21 README.txt
+-rw-r--r--   1 ctmove   psacln        517 Aug  2 12:21 anchors_panels_navigation.info
+-rw-r--r--   1 ctmove   psacln       2197 Aug  2 12:21 anchors_panels_navigation.js
+-rw-r--r--   1 ctmove   psacln       6367 Aug  2 12:21 anchors_panels_navigation.module

@@ -1,0 +1,13 @@
+drwxr-xr-x   2 ctmove   psacln       4096 Aug 11 12:00 .
+drwxr-xr-x  20 ctmove   psacln       4096 Dec 21 08:58 ..
+-rw-r--r--   1 ctmove   psacln        569 Aug 11 12:00 code-clean.sh
+-rw-r--r--   1 ctmove   psacln         66 Aug 11 12:00 cron-curl.sh
+-rw-r--r--   1 ctmove   psacln         78 Aug 11 12:00 cron-lynx.sh
+-rw-r--r--   1 ctmove   psacln       4264 Aug 11 12:00 drupal.sh
+-rw-r--r--   1 ctmove   psacln       2955 Aug 11 12:00 dump-database-d6.sh
+-rw-r--r--   1 ctmove   psacln       2573 Aug 11 12:00 dump-database-d7.sh
+-rw-r--r--   1 ctmove   psacln       6814 Aug 11 12:00 generate-d6-content.sh
+-rw-r--r--   1 ctmove   psacln      10790 Aug 11 12:00 generate-d7-content.sh
+-rw-r--r--   1 ctmove   psacln       2363 Aug 11 12:00 password-hash.sh
+-rw-r--r--   1 ctmove   psacln      22270 Aug 11 12:00 run-tests.sh
+-rw-r--r--   1 ctmove   psacln        185 Aug 11 12:00 test.script

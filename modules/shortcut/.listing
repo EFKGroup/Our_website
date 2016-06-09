@@ -1,0 +1,13 @@
+drwxr-xr-x   2 ctmove   psacln       4096 Aug 11 12:00 .
+drwxr-xr-x  42 ctmove   psacln       4096 Aug 11 12:00 ..
+-rw-r--r--   1 ctmove   psacln       1067 Aug 11 12:00 shortcut-rtl.css
+-rw-r--r--   1 ctmove   psacln        104 Aug 11 12:00 shortcut.admin.css
+-rw-r--r--   1 ctmove   psacln      26882 Aug 11 12:00 shortcut.admin.inc
+-rw-r--r--   1 ctmove   psacln       4485 Aug 11 12:00 shortcut.admin.js
+-rw-r--r--   1 ctmove   psacln       1239 Aug 11 12:00 shortcut.api.php
+-rw-r--r--   1 ctmove   psacln       2408 Aug 11 12:00 shortcut.css
+-rw-r--r--   1 ctmove   psacln        336 Aug 11 12:00 shortcut.info
+-rw-r--r--   1 ctmove   psacln       3053 Aug 11 12:00 shortcut.install
+-rw-r--r--   1 ctmove   psacln      27199 Aug 11 12:00 shortcut.module
+-rw-r--r--   1 ctmove   psacln        558 Aug 11 12:00 shortcut.png
+-rw-r--r--   1 ctmove   psacln      13662 Aug 11 12:00 shortcut.test

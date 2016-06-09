@@ -1,0 +1,99 @@
+/* This file will hold styles that are loaded using the same media query as the normal grid. */
+
+.home-movies-view .logo img {width: 100%!important; height: auto!important}
+/* Location */
+.location {color: #423d38!important; width: 100%}
+.location h2 {font-size: 65px!important; color: #423d38!important; margin-bottom: 25px}
+.location p {font-size: 20px!important; color: #423d38!important;}
+
+.main-content-inner {width: 820px; padding-top: 85px; padding-bottom: 115px; padding-left: 0; padding-right: 0}
+.main-content h2 {font-size: 80px; margin-bottom: 80px; line-height: 90px}
+#iam1150 {margin-bottom: 40px}
+#zone-preface-wrapper p {font-size: 40px; padding-left: 12%; padding-right: 12%}
+.page-node-17 .iambigguy {background-image: url(images/prince-male.jpg); background-position: right bottom; background-repeat: no-repeat; background-color: #c9c9c9}
+.spotlight .logo p {
+    font-size: 25px;
+}
+
+.lets-work {padding-bottom: 90px; padding-top: 90px;}
+#region-sidebar-first h2 {padding-bottom: 90px; padding-top: 90px;}
+
+#zone-preface-wrapper .body-wrap {width: 70%}
+
+.capabilities {width: 90%}
+.capabilities .grid-3 {width: 19%!important}
+.capabilities ul li {font-size: 18px!important; line-height: 22px}
+.capabilities h2 {font-size: 25px!important}
+h2.block-title {
+   letter-spacing: 20px;
+   font-size: 30px;
+}
+.spotlight .logo p span.arrow {
+    display: block;
+    font-size: 60px;
+    margin-top: 30px;
+}
+.client-logo {height: 200px;}
+.front #zone-postscript .grid-3, .page-node-68 .grid-3 {width: 20%!important; margin-left: auto; margin-right: auto; float: left}
+.front #region-postscript-space-one, .front #region-postscript-space-two {display: block!important; width:100%!important; margin-left: 0!important; margin-right: 0!important}
+.spotlight-arrow {width: 50px!important; height: auto!important}
+.spotlight .logo p {
+    font-size: 25px;
+}
+.body-wrap.expertise .grid-6 p{width: 70%; margin-top: 15%; padding-left: 20%}
+.image-grid .spotlight .logo h2 {text-transform: uppercase; font-size: 42px; line-height: 42px}
+.splitter li#gaming {margin-right: 0}
+.splitter li {text-align: center}
+.splitter {width: auto}
+.page-node-19 #region-case-study-three .body-wrap {
+    box-sizing: padding-box;
+    -webkit-box-sizing: padding-box;
+    -moz-box-sizing: padding-box;
+    left: inherit;
+    position: relative;
+    top: inherit;
+    transform: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    width: 100%;
+    background-position:center center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+.social-delivery-wrapper div { float: left; width: 20%}
+.page-node-19 .body-wrap.locations p, .page-node-19 .body-wrap.locations p {font-family: 'Lato', sans-serif; font-weight: 300; color: #303a3b; font-size: 20px;}
+.node-type-page .body-wrap h2, .node-type-page .body-wrap-three h2 {font-family: Lato,sans-serif; color: #303a3b; line-height: 84px; font-size: 83px; f    font-family: lato;
+    font-size: 6vw;
+    line-height: 1;
+    margin-bottom: 60px;
+	text-align: center}
+div.hover-details .movie-body-section .logo, .case-study-movie .movie-body-section .logo, .case-study-movie .movie-body-section .logo, #zone-branding-wrapper .movie-body-section .logo {position: absolute;
+  top: 50%;
+  left: 47%; -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); text-decoration: none;
+            height: auto;
+            width: 72%}
+ .front-mobile-header  {position: absolute;
+  top: 50%;
+  left: 50%; -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); text-decoration: none;
+            height: auto}          
+
+ .page-node-98 .kean-top-grad {background:url(/sites/default/files/EFK_CASESTUDY_KEAN_top-grad.png) no-repeat top center; background-size: 140%!important}
+ .page-node-79 .kean-top-grad {background:url(/sites/default/files/lecom-case-latest/CASESTUDY_LECOM_01_02.jpg) no-repeat top center; background-size: 140%!important}
+ /* Location */
+.location {color: #423d38!important}
+loc h2 {font-size: 72px}
+.leadership h2 {font-size: 30px; letter-spacing: 20px;}
+
+/*
+ * ==========================================================
+ * LEADERSHIPS
+ * ==========================================================
+ */           
+ .leaderships .container-12 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px; }   

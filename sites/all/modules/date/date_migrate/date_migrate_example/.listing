@@ -1,0 +1,9 @@
+drwxr-xr-x   2 ctmove   psacln       4096 Aug 11 12:24 .
+drwxr-xr-x   3 ctmove   psacln       4096 Aug 11 12:24 ..
+-rw-r--r--   1 ctmove   psacln      19006 Jun  5  2015 date_migrate_example.features.field.inc
+-rw-r--r--   1 ctmove   psacln        527 Jun  5  2015 date_migrate_example.features.inc
+-rw-r--r--   1 ctmove   psacln       1061 Jun  5  2015 date_migrate_example.info
+-rw-r--r--   1 ctmove   psacln        462 Jun  5  2015 date_migrate_example.install
+-rw-r--r--   1 ctmove   psacln       4886 Jun  5  2015 date_migrate_example.migrate.inc
+-rw-r--r--   1 ctmove   psacln        372 Jun  5  2015 date_migrate_example.module
+-rw-r--r--   1 ctmove   psacln       1771 Jun  5  2015 date_migrate_example.xml

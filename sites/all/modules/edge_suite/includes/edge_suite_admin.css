@@ -1,0 +1,26 @@
+/**
+ * Global overview.
+ */
+
+#edge-suite-admin-form td.es-definition-label{
+    font-weight: bold;
+}
+
+#edge-suite-admin-form td.es-instance-label{
+    padding-left: 40px;
+}
+
+/**
+ * OAM upload widget.
+ */
+
+div.edge-suite-meta img.poster {
+    float: left;  /* LTR */
+    padding: 0 10px 10px 0; /* LTR */
+}
+div.edge-suite-widget .form-submit {
+    margin-left: 1em;
+}
+div.edge-suite-widget-data .description {
+    white-space: normal;
+}

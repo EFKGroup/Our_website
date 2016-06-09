@@ -1,0 +1,10 @@
+drwxr-xr-x   2 ctmove   psacln       4096 Aug 11 12:28 .
+drwxr-xr-x   9 ctmove   psacln       4096 Aug 11 12:28 ..
+-rw-r--r--   1 ctmove   psacln      90622 Jun  5  2015 rules.test
+-rw-r--r--   1 ctmove   psacln        330 Jun  5  2015 rules_test.info
+-rw-r--r--   1 ctmove   psacln       1447 Jun  5  2015 rules_test.module
+-rw-r--r--   1 ctmove   psacln       9116 Jun  5  2015 rules_test.rules.inc
+-rw-r--r--   1 ctmove   psacln       3758 Jun  5  2015 rules_test.rules_defaults.inc
+-rw-r--r--   1 ctmove   psacln       1501 Jun  5  2015 rules_test.test.inc
+-rw-r--r--   1 ctmove   psacln        274 Jun  5  2015 rules_test_invocation.info
+-rw-r--r--   1 ctmove   psacln        215 Jun  5  2015 rules_test_invocation.module

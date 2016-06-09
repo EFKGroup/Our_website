@@ -1,0 +1,4 @@
+drwxr-xr-x   2 ctmove   psacln       4096 Aug 11 12:00 .
+drwxr-xr-x   4 ctmove   psacln       4096 Aug 11 12:00 ..
+-rw-r--r--   1 ctmove   psacln        497 Aug 11 12:00 drupal_system_listing_incompatible_test.info
+-rw-r--r--   1 ctmove   psacln          6 Aug 11 12:00 drupal_system_listing_incompatible_test.module

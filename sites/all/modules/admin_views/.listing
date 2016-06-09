@@ -1,0 +1,12 @@
+drwxr-xr-x   5 ctmove   psacln       4096 Aug 30 20:02 .
+drwxr-xrwx  98 ctmove   psacln       4096 Nov 30 09:56 ..
+-rw-r--r--   1 ctmove   psacln      18092 Aug 14 13:16 LICENSE.txt
+-rw-r--r--   1 ctmove   psacln        402 Aug 14 13:16 admin_views.css
+-rw-r--r--   1 ctmove   psacln        509 Aug 14 13:16 admin_views.info
+-rw-r--r--   1 ctmove   psacln        347 Aug 14 13:16 admin_views.install
+-rw-r--r--   1 ctmove   psacln        219 Aug 14 13:16 admin_views.module
+-rw-r--r--   1 ctmove   psacln       1068 Aug 14 13:16 admin_views.views.inc
+-rw-r--r--   1 ctmove   psacln       1314 Aug 14 13:16 admin_views.views_default.inc
+drwxr-xr-x   2 ctmove   psacln       4096 Aug 30 20:02 admin_views_default
+drwxr-xr-x   2 ctmove   psacln       4096 Aug 30 20:02 plugins
+drwxr-xr-x   3 ctmove   psacln       4096 Aug 30 20:02 tests

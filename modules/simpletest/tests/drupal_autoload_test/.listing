@@ -1,0 +1,6 @@
+drwxr-xr-x   2 ctmove   psacln       4096 Aug 11 12:00 .
+drwxr-xr-x   9 ctmove   psacln       4096 Aug 11 12:00 ..
+-rw-r--r--   1 ctmove   psacln        372 Aug 11 12:00 drupal_autoload_test.info
+-rw-r--r--   1 ctmove   psacln         63 Aug 11 12:00 drupal_autoload_test.module
+-rw-r--r--   1 ctmove   psacln        215 Aug 11 12:00 drupal_autoload_test_class.inc
+-rw-r--r--   1 ctmove   psacln        191 Aug 11 12:00 drupal_autoload_test_interface.inc

@@ -1,0 +1,15 @@
+drwxr-xr-x   6 ctmove   psacln       4096 Aug 11 12:23 .
+drwxr-xrwx  98 ctmove   psacln       4096 Nov 30 09:56 ..
+-rw-r--r--   1 ctmove   psacln      18092 Aug  4 09:53 LICENSE.txt
+-rw-r--r--   1 ctmove   psacln       1224 Aug  4 09:53 README.txt
+-rw-r--r--   1 ctmove   psacln       1015 Aug  4 09:53 adminimal.info
+-rw-r--r--   1 ctmove   psacln      11292 Aug  4 09:53 adminimal_admin_menu.css
+-rw-r--r--   1 ctmove   psacln        339 Aug  4 09:53 adminimal_admin_menu.info
+-rw-r--r--   1 ctmove   psacln       3303 Aug  4 09:53 adminimal_admin_menu.install
+-rw-r--r--   1 ctmove   psacln       7526 Aug  4 09:53 adminimal_admin_menu.module
+-rw-r--r--   1 ctmove   psacln       4114 Aug  4 09:53 adminimal_menu_settings.inc
+-rw-r--r--   1 ctmove   psacln        150 Aug  4 09:53 credits.txt
+drwxr-xr-x   3 ctmove   psacln       4096 Aug 11 12:23 css
+drwxr-xr-x   2 ctmove   psacln       4096 Aug 11 12:23 images
+drwxr-xr-x   3 ctmove   psacln       4096 Aug 11 12:23 js
+drwxr-xr-x   2 ctmove   psacln       4096 Aug 11 12:23 updates

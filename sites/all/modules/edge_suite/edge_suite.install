@@ -1,0 +1,236 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for Edge Suite module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function edge_suite_schema() {
+  $schema['edge_suite_definition'] = array(
+    'description' => 'Composition definitions.',
+    'fields' => array(
+      'definition_id' => array(
+        'description' => 'Internal ID of a composition.',
+        'type' => 'serial',
+        'not null' => TRUE,
+      ),
+      'fid' => array(
+        'description' => 'The {file_managed}.fid of the source OAM.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ),
+      'project_name' => array(
+        'description' => 'Name of the project.',
+        'type' => 'varchar',
+        'length' => '255',
+        'not null' => TRUE,
+      ),
+      'composition_id' => array(
+        'description' => 'CompositionId / Class Name of Stage DIV.',
+        'type' => 'varchar',
+        'length' => '255',
+        'not null' => TRUE,
+      ),
+      'type' => array(
+        'description' => 'Defines the instance type: field and global.',
+        'type' => 'varchar',
+        'length' => '64',
+        'not null' => TRUE,
+      ),
+      'info' => array(
+        'type' => 'text',
+        'size' => 'big',
+        'description' => 'A serialized array of meta information.',
+        'serialize' => TRUE,
+        'serialized default' => 'a:0:{}',
+      ),
+      'uid' => array(
+        'description' => 'Uid of the author.',
+        'type' => 'int',
+        'not null' => TRUE,
+      ),
+      'created' => array(
+        'description' => 'The Unix timestamp when the definition was created.',
+        'type' => 'int',
+        'not null' => TRUE,
+      ),
+      'changed' => array(
+        'description' => 'The Unix timestamp when the definition was updated.',
+        'type' => 'int',
+        'not null' => TRUE,
+      ),
+    ),
+    'primary key' => array('definition_id'),
+    'foreign keys' => array(
+      'fid' => array(
+        'table' => 'file_managed',
+        'columns' => array('fid' => 'fid'),
+      ),
+    ),
+    'indexes' => array(
+      'definition_id' => array('definition_id'),
+      'fid' => array('fid'),
+    ),
+  );
+
+  $schema['edge_suite_instance'] = array(
+    'description' => 'Instances of a compositions.',
+    'fields' => array(
+      'instance_id' => array(
+        'description' => 'Internal id of the instance.',
+        'type' => 'serial',
+        'not null' => TRUE,
+      ),
+      'definition_id' => array(
+        'description' => 'Definition reference.',
+        'type' => 'int',
+        'not null' => TRUE,
+      ),
+      'label' => array(
+        'description' => 'Label of the instance.',
+        'type' => 'varchar',
+        'length' => '255',
+        'not null' => TRUE,
+      ),
+      'description' => array(
+        'description' => 'Description of the instance.',
+        'type' => 'varchar',
+        'length' => '255',
+        'not null' => TRUE,
+      ),
+      'context_entity_id' => array(
+        'description' => 'Entity Id of the context, e.g. the node to use for tokens with data injection.',
+        'type' => 'int',
+        'not null' => FALSE,
+      ),
+      // Todo unclear: add foreign key?
+      'field_id' => array(
+        'description' => 'Id of the field the instance is linked to.',
+        'type' => 'int',
+        'not null' => FALSE,
+      ),
+      'config' => array(
+        'type' => 'text',
+        'size' => 'big',
+        'description' => 'A serialized array of the configuration.',
+        'serialize' => TRUE,
+        'serialized default' => 'a:0:{}',
+      ),
+    ),
+    'foreign keys' => array(
+      'definition' => array(
+        'table' => 'edge_suite_definition',
+        'columns' => array('definition_id' => 'definition_id'),
+      ),
+    ),
+    'primary key' => array('instance_id'),
+  );
+  return $schema;
+}
+
+
+/**
+ * Implements hook_field_schema().
+ */
+function edge_suite_field_schema($field) {
+  return array(
+    'columns' => array(
+      'instance_id' => array(
+        'description' => 'Instance reference.',
+        'type' => 'int',
+        'not null' => TRUE,
+      ),
+    ),
+    'foreign keys' => array(
+      'instance' => array(
+        'table' => 'edge_suite_instance',
+        'columns' => array('instance_id' => 'instance_id'),
+      ),
+    ),
+    'indexes' => array(
+      'instance_id' => array('instance_id'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function edge_suite_uninstall() {
+  require_once 'includes/edge_suite_file.inc';
+
+  // Delete all Edge Suite variables.
+  $query = db_select('variable', 'v')
+    ->condition('v.name', 'edge\_suite\_%', 'LIKE');
+  $query->addField('v', 'name');
+
+  $vars = $query->execute();
+  foreach ($vars as $var) {
+    variable_del($var->name);
+  }
+
+  // Delete all left over definitions (these should only be global).
+  $query = db_select('edge_suite_definition', 'd');
+  $query->fields('d');
+  $definitions = $query->execute();
+
+  $edge_suite_main_dir = edge_suite_get_path('main');
+  $edge_suite_project_dir = edge_suite_get_path('project');
+
+  foreach ($definitions as $definition) {
+    $file = file_load($definition->fid);
+
+    if ($file) {
+      // Delete OAM.
+      file_usage_delete($file, 'edge_suite', 'edge_suite_definition', $definition->definition_id);
+      file_delete($file);
+
+      // Try to delete OAM directory, only works if it's empty.
+      edge_suite_dir_delete_empty(drupal_dirname($file->uri));
+
+      // Delete project directory.
+      $project_name_unique = strtolower($definition->project_name) . '_' . $definition->definition_id;
+      if (is_dir($edge_suite_project_dir . '/' . $project_name_unique)) {
+        file_unmanaged_delete_recursive($edge_suite_project_dir . '/' . $project_name_unique);
+      }
+    }
+  }
+
+  // Clean up block registry.
+  db_delete('block')
+    ->condition('delta', 'edge\_suite\_composition\_block\_%', 'LIKE')
+    ->execute();
+
+  // Delete library directory.
+  if (is_dir($edge_suite_main_dir . '/edge_includes')) {
+    file_unmanaged_delete_recursive($edge_suite_main_dir . '/edge_includes');
+  }
+
+  // Delete empty project directory.
+  if (!edge_suite_dir_delete_empty($edge_suite_project_dir)) {
+    drupal_set_message(t('Edge Suite project directory was not deleted, not empty: %dir', array('%dir' => $edge_suite_project_dir)));
+  }
+
+  // Delete empty main edge suite directory.
+  if (!edge_suite_dir_delete_empty($edge_suite_main_dir)) {
+    drupal_set_message(t('Main Edge Suite directory was not deleted, not empty: %dir', array('%dir' => $edge_suite_project_dir)));
+  }
+}
+
+
+/**
+ * Update default allowed asset extensions.
+ */
+function edge_suite_update_7201() {
+  $extensions = variable_get('edge_suite_allowed_asset_formats', '');
+
+  if (str_replace(' ', '', $extensions) == 'js,png,jpg,gif,svg') {
+    $extensions = 'js, png, jpg, gif, svg, css, html, woff, eot, ttf, mp3, ogg, oga, wav, m4a, aac';
+    variable_set('edge_suite_allowed_asset_formats', $extensions);
+  }
+
+}

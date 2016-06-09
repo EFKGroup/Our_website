@@ -1,0 +1,306 @@
+/* This file will hold the main styles for your website. */
+
+@font-face{
+    font-family: "Berthold-AkzidenzBE";
+    src: url('fonts/berthold_akzidenz_grotesk_be_condensed-webfont.ttf'),
+    url('berthold_akzidenz_grotesk_be_condensed-webfont.eot'); /* IE */
+}
+@font-face{
+    font-family: "Berthold-AkzidenzBE-light";
+    src: url('fonts/berthold_akzidenz_grotesk_be_light_condensed-webfont.ttf'),
+    url('berthold_akzidenz_grotesk_be_light_condensed-webfont.eot'); /* IE */
+}
+sup {
+    font-size: 80%;
+    height: 0;
+    line-height: 1;
+    position: relative;
+    top: -0.6em;
+    vertical-align: baseline !important;
+}
+
+h1, h2, h3, h4, h5, h6, p, div, td {
+	letter-spacing: 0em;
+}
+body {
+	background-color: #fff;
+}
+#page {
+	background-color: #fff;
+}
+.red {
+	color: #F00!important;
+}
+ /*
+ * ==========================================================
+ * Table Reset
+ * ==========================================================
+ */
+ 
+.view table, table,
+.view tbody, tbody,
+.view tfoot, tfoot,
+.view thead, thead,
+.view tr, tr,
+.view th, th,
+.view td, td {
+	vertical-align: top;
+	background-color: transparent;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	margin-bottom: 0px;
+	padding-right: 0px;
+	padding-left: 0px;
+}
+.view tr:hover td, tr:hover td,
+.view tr.even:hover td.active, tr.even:hover td.active,
+.view tr.odd:hover td.active, tr.odd:hover td.active {
+  background: transparent;
+}
+.view tr.even, .view tr.odd, tr.even, tr.odd,
+.view tr.even td, .view tr.odd td, tr.even td, tr.odd td {
+	background-color: transparent;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+}
+.view tr.even, .view tr.odd,
+tr.even, tr.odd {
+	background-color: transparent;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+}
+h2.block-title {
+   font-family: Berthold-AkzidenzBE,sans-serif;
+   color: #3a3a3a;
+   text-transform: uppercase;
+   letter-spacing: 20px;
+   font-size: 25px;
+}
+.front #zone-branding {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    border: 15px solid orange
+}
+front #region-branding {}
+.scroll-content {
+      position: absolute;
+      top: 100%;
+      width: 100%;
+    }
+#logo-menu {font-family: Berthold-AkzidenzBE,sans-serif; color: #FFF; font-size: 54px; font-weight: bold; padding-left: 15px; width: 100px; float: left}
+#zone-menu {
+    margin-left: 0;
+    margin-right: 0;
+    width: 5.5%;
+	min-width: 3.5%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    background-color: #FFFFFF;
+}
+@media (max-width: 800px) {
+	#zone-menu {width: 50px;}
+	.logo-main img {width: 40px!important; margin-left: 5px!important; margin-right: 5px!important;}
+	.logo-img {margin-left: 0!important; margin-right: 0!important;}
+}
+.logo-main {position: absolute; bottom: 15px}
+.logo-main img {width: 100%; height: auto; text-align: center}
+#region-menu-inner, #region-menu {height: 100%; margin-left: 0; margin-right: 0}
+p#trigger-overlay {
+	font-size:36px; color: #303a3b; text-align: center; width: 100%; cursor: pointer; padding-top: 10px;
+}
+.logo-img {float: none; margin-left: 15%; margin-right: 15%; text-align: center}
+#zone-preface-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    background-color: #fff;
+}
+#zone-preface {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 1580px;
+    text-align: center;
+    background-image: url(images/zigzag_1.svg);
+    background-size: cover;
+    background-color: #000;
+    padding-top: 30px;
+}
+#zone-preface-wrapper p {
+    font-family: Berthold-AkzidenzBE,sans-serif;
+    text-align: center;
+    color: #fff;
+    font-size: 45px;
+    padding-left: 24%; padding-right: 24%;
+    margin-bottom: 30px}
+@media (max-width: 1700px) {
+	#zone-preface-wrapper p {
+    padding-left: 20%; padding-right: 20%;}
+	}
+@media (max-width: 1400px) {
+	#zone-preface-wrapper p {
+    padding-left: 24%; padding-right: 24%;}
+	}	
+#zone-preface-wrapper p em {text-transform: uppercase; color: #c83830; font-style: normal;}
+#region-branding video { 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+    background: url('//demosthenes.info/assets/images/polina.jpg') no-repeat;
+    background-size: cover;
+    transition: 1s opacity;
+}
+.stopfade { 
+   opacity: .5;
+}
+#zone-content-wrapper {
+      background-color: #fff;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+}
+#zone-content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    text-align: center;
+    background-color: #fff;
+}
+#region-sidebar-first {width: 100%; margin-left: 0; margin-right: 0}
+#region-sidebar-first h2 {padding-top: 4%; padding-bottom: 4%;}
+#polina { 
+  font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
+  font-weight:100; 
+  background: rgba(0,0,0,0.3);
+  color: white;
+  padding: 2rem;
+  width: 33%;
+  margin:2rem;
+  float: right;
+  font-size: 1.2rem;
+}
+h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-top: 0;
+  letter-spacing: .3rem;
+}
+#polina button { 
+  display: block;
+  width: 80%;
+  padding: .4rem;
+  border: none; 
+  margin: 1rem auto; 
+  font-size: 1.3rem;
+  background: rgba(255,255,255,0.23);
+  color: #fff;
+  border-radius: 3px; 
+  cursor: pointer;
+  transition: .3s background;
+}
+#polina button:hover { 
+   background: rgba(0,0,0,0.5);
+}
+#zone-postscript .grid-3 {width: 20%!important; margin-left: 0; margin-right: 0}
+#region-branding a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  background:rgba(0,0,0,0.5);
+  padding: .5rem;
+  transition: .6s background; 
+}
+#region-branding a:hover{
+  background:rgba(0,0,0,0.9);
+}
+@media screen and (max-width: 500px) { 
+  #region-branding div{width:70%;} 
+}
+@media screen and (max-device-width: 800px) {
+  html { background: url(//demosthenes.info/assets/images/polina.jpg) #000 no-repeat center center fixed; }
+  #bgvid { display: none; }
+}
+.home-movies-view li {margin: 0!important;}
+.home-movies-view video {width: 100%; height: auto;}
+#zone-postscript-wrapper {
+      background-color: #fff;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+}
+#zone-postscript {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    text-align: center;
+    background-color: #fff;
+}
+region-postscript-first {width: 100%; margin-left: 0; margin-right: 0}
+region-postscript-first h2 {padding-top: 4%; padding-bottom: 0; color: #000;}
+.our-clients-view td {background-color: #666; margin: 0; padding: 0; border-bottom: 1px; border-style: solid; border-color: #c8c8c8;}
+
+@media screen and (max-width: 740px) {
+      .our-clients img {width: 316px!important; height: auto!important;}
+      #zone-postscript .grid-3 {width: 100%!important; margin-left: auto; margin-right: auto}
+}
+.our-clients img {width: 100%; height: auto; max-width: 316px}
+.full-hor-line div {
+      background-color: #c8c8c8;
+	  height: 1px;
+	  width: 90%;
+	  margin-left: auto;
+	  margin-right: auto;
+}
+.our-clients-title h2.block-title {
+	color: #000000;
+	margin-top:3%;
+	margin-bottom:1%;
+}
+#zone-footer-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    background-color: #fff;
+}
+#zone-footer {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    text-align: center;
+}
+.footer-logo p {margin-bottom: 4%; text-align: center}
+.footer-logo p img {width: 100%!important; height: auto!important; max-width: 363px!important;}
+.footer-social-menu ul {text-align: center}
+.footer-social-menu ul li.leaf {margin: 0; list-style-image: url("none");
+    list-style-type: none; padding: 0; display: inline-block}
+.footer-social-menu ul li:hover {/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fc67ea+0,cc184a+100 */
+background: #fc67ea; /* Old browsers */
+background: -moz-linear-gradient(top,  #fc67ea 0%, #cc184a 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fc67ea), color-stop(100%,#cc184a)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #fc67ea 0%,#cc184a 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #fc67ea 0%,#cc184a 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #fc67ea 0%,#cc184a 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #fc67ea 0%,#cc184a 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fc67ea', endColorstr='#cc184a',GradientType=0 ); /* IE6-9 */
+}
+.footer-social-menu a.fa {color: #5a544e; font-size: 35px; text-decoration: none; display: inline-block; width: 137px; height: 137px; text-align: center; vertical-align: middle; line-height: 4; }
+.footer-social-menu a:hover {background-image: url(images/angledLines.svg); color: #FFFFFF}
+@media (max-width: 800px) {
+	
+	.footer-social-menu a.fa {width: 50px!important; height: 50px!important; line-height: 1.5}
+}

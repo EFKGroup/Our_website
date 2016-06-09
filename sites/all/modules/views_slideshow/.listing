@@ -1,0 +1,15 @@
+drwxr-xr-x   5 ctmove   psacln       4096 Nov  6 13:02 .
+drwxr-xrwx  98 ctmove   psacln       4096 Nov 30 09:56 ..
+-rw-r--r--   1 ctmove   psacln      18092 Nov  6 13:02 LICENSE.txt
+-rw-r--r--   1 ctmove   psacln       2964 Nov  6 13:02 README.txt
+drwxr-xr-x   3 ctmove   psacln       4096 Nov  6 13:02 contrib
+drwxr-xr-x   2 ctmove   psacln       4096 Nov  6 13:02 js
+drwxr-xr-x   2 ctmove   psacln       4096 Nov  6 13:02 theme
+-rw-r--r--   1 ctmove   psacln       5591 Nov  6 13:02 views_slideshow.api.php
+-rw-r--r--   1 ctmove   psacln        155 Nov  6 13:02 views_slideshow.css
+-rw-r--r--   1 ctmove   psacln        569 Nov  6 13:02 views_slideshow.info
+-rw-r--r--   1 ctmove   psacln        947 Nov  6 13:02 views_slideshow.make
+-rw-r--r--   1 ctmove   psacln      17978 Nov  6 13:02 views_slideshow.module
+-rw-r--r--   1 ctmove   psacln        820 Nov  6 13:02 views_slideshow.views.inc
+-rw-r--r--   1 ctmove   psacln         95 Nov  6 13:02 views_slideshow_controls_text.css
+-rw-r--r--   1 ctmove   psacln      11517 Nov  6 13:02 views_slideshow_plugin_style_slideshow.inc

@@ -1,0 +1,9 @@
+drwxr-xr-x   5 ctmove   psacln       4096 Aug 11 12:26 .
+drwxr-xrwx  98 ctmove   psacln       4096 Nov 30 09:56 ..
+-rw-r--r--   1 ctmove   psacln      18092 Jun  5  2015 LICENSE.txt
+-rw-r--r--   1 ctmove   psacln       4440 Jun  5  2015 README.txt
+drwxr-xr-x   2 ctmove   psacln       4096 Aug 11 12:26 includes
+-rw-r--r--   1 ctmove   psacln        366 Jun  5  2015 jcarousel.info
+-rw-r--r--   1 ctmove   psacln      16180 Jun  5  2015 jcarousel.module
+drwxr-xr-x   2 ctmove   psacln       4096 Aug 11 12:26 js
+drwxr-xr-x   4 ctmove   psacln       4096 Aug 11 12:26 skins

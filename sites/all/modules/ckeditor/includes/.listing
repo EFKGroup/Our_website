@@ -1,0 +1,13 @@
+drwxr-xr-x   4 ctmove   psacln       4096 Aug 11 12:23 .
+drwxr-xr-x   7 ctmove   psacln       4096 Aug 11 12:23 ..
+-rw-r--r--   1 ctmove   psacln      85995 Aug  4 08:12 ckeditor.admin.inc
+-rw-r--r--   1 ctmove   psacln       4623 Aug  4 08:12 ckeditor.admin.js
+-rw-r--r--   1 ctmove   psacln       2111 Aug  4 08:12 ckeditor.drush.inc
+-rw-r--r--   1 ctmove   psacln       4081 Aug  4 08:12 ckeditor.features.inc
+-rw-r--r--   1 ctmove   psacln      60086 Aug  4 08:12 ckeditor.lib.inc
+-rw-r--r--   1 ctmove   psacln      16288 Aug  4 08:12 ckeditor.page.inc
+-rw-r--r--   1 ctmove   psacln       5910 Aug  4 08:12 ckeditor.user.inc
+-rw-r--r--   1 ctmove   psacln      13596 Aug  4 08:12 ckeditor.utils.js
+-rw-r--r--   1 ctmove   psacln       3779 Aug  4 08:12 filemanager.config.php
+drwxr-xr-x   2 ctmove   psacln       4096 Aug 11 12:23 jqueryUI
+drwxr-xr-x   7 ctmove   psacln       4096 Aug 11 12:23 uicolor

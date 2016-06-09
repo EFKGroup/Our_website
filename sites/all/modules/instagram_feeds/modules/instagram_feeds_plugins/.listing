@@ -1,0 +1,7 @@
+drwxr-xr-x   3 ctmove   psacln       4096 Sep 23 07:35 .
+drwxr-xr-x   4 ctmove   psacln       4096 Sep 23 07:35 ..
+-rw-r--r--   1 ctmove   psacln       1080 Sep 23 07:35 README.txt
+-rw-r--r--   1 ctmove   psacln        475 Sep 23 07:35 instagram_feeds_plugins.info
+-rw-r--r--   1 ctmove   psacln        872 Sep 23 07:35 instagram_feeds_plugins.install
+-rw-r--r--   1 ctmove   psacln       7288 Sep 23 07:35 instagram_feeds_plugins.module
+drwxr-xr-x   3 ctmove   psacln       4096 Sep 23 07:35 plugins

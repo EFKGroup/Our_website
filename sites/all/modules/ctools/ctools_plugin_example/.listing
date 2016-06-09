@@ -1,0 +1,8 @@
+drwxr-xr-x   4 ctmove   psacln       4096 Aug 11 12:23 .
+drwxr-xr-x  19 ctmove   psacln       4096 Aug 11 12:24 ..
+-rw-r--r--   1 ctmove   psacln        549 Aug  2 12:15 README.txt
+-rw-r--r--   1 ctmove   psacln        456 Aug  2 12:15 ctools_plugin_example.info
+-rw-r--r--   1 ctmove   psacln       3534 Aug  2 12:15 ctools_plugin_example.module
+-rw-r--r--   1 ctmove   psacln      13736 Aug  2 12:15 ctools_plugin_example.pages_default.inc
+drwxr-xr-x   2 ctmove   psacln       4096 Aug 11 12:23 help
+drwxr-xr-x   7 ctmove   psacln       4096 Aug 11 12:23 plugins

@@ -1,0 +1,10 @@
+drwxr-xr-x   5 ctmove   psacln       4096 Sep 23 07:40 .
+drwxr-xrwx  98 ctmove   psacln       4096 Nov 30 09:56 ..
+-rw-r--r--   1 ctmove   psacln      18092 Sep 23 07:40 LICENSE.txt
+-rw-r--r--   1 ctmove   psacln      10506 Sep 23 07:40 feeds_tamper.inc
+-rw-r--r--   1 ctmove   psacln        395 Sep 23 07:40 feeds_tamper.info
+-rw-r--r--   1 ctmove   psacln       3738 Sep 23 07:40 feeds_tamper.install
+-rw-r--r--   1 ctmove   psacln       6069 Sep 23 07:40 feeds_tamper.module
+drwxr-xr-x   3 ctmove   psacln       4096 Sep 23 07:40 feeds_tamper_ui
+drwxr-xr-x   2 ctmove   psacln       4096 Sep 23 07:40 plugins
+drwxr-xr-x   3 ctmove   psacln       4096 Sep 23 07:40 tests

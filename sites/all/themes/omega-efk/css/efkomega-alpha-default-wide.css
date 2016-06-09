@@ -1,0 +1,78 @@
+/* This file will hold styles that are loaded using the same media query as the wide grid. */
+  
+/* Location */
+.location {color: #423d38!important; width: 100%}
+.location h2 {font-size: 72px!important; color: #423d38!important; margin-bottom: 40px}
+.location p {font-size: 25px!important; color: #423d38!important;}
+#zone-preface-wrapper p {
+    font-family: Berthold-AkzidenzBE,sans-serif;
+    text-align: center;
+    color: #fff;
+    font-size: 300%;
+	line-height: 65px;
+    margin-bottom: 0}
+#zone-preface-wrapper .body-wrap {width: 70%}
+.capabilities {width: 85%}
+.capabilities .grid-3 {width: 18%!important}
+.capabilities ul li {font-family: 'Lato', sans-serif!important; font-weight: 200!important; color: #FFF!important; line-height: 27px; font-size: 23px!important}
+
+
+.spotlight .logo p {
+    font-size: 28px;
+}
+.main-content-inner {width: 60%; padding-top: 90px; padding-bottom: 115px; padding-left: 0; padding-right: 0}
+.main-content h2 {font-size: 6vw; line-height: 90px; margin-bottom: 80px}
+#zone-preface-wrapper p {font-size: 43px; padding-left: 12%; padding-right: 12%}
+ .body-wrap.leadership h2, .at-efk h3 {line-height: 0!important}
+.body-wrap.expertise .grid-6 p{width: 65%; margin-top: 25%; padding-left: 20%}
+.social-delivery-wrapper div img {height: 125px!important; width: auto!important}
+.page-node-19 #region-case-study-three .body-wrap {
+    box-sizing: padding-box;
+    -webkit-box-sizing: padding-box;
+    -moz-box-sizing: padding-box;
+    left: inherit;
+    position: relative;
+    top: inherit;
+    transform: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    width: 100%;
+    background-position:center center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+div.hover-details .movie-body-section .logo, .case-study-movie .movie-body-section .logo, .case-study-movie .movie-body-section .logo, .front-mobile-header, #zone-branding-wrapper .movie-body-section .logo {position: absolute;
+  top: 50%;
+  left: 45%; -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); text-decoration: none;
+           width: 70%;
+            height: auto; z-index:2;}
+            
+  .page-node-98 .kean-top-grad {background:url(/sites/default/files/EFK_CASESTUDY_KEAN_top-grad.png) no-repeat top center; background-size: 100%!important}
+  .page-node-79 .kean-top-grad {background:url(/sites/default/files/lecom-case-latest/CASESTUDY_LECOM_01_02.jpg) no-repeat top center; background-size: 100%!important}
+           
+.front-desktop-header {position: absolute;
+  top: 50%;
+  left: 50%; -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); text-decoration: none;
+           
+            height: auto}
+ 
+ /*
+ * ==========================================================
+ * LEADERSHIPS
+ * ==========================================================
+ */           
+ .leaderships .container-12 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px; }
+    
+ @media (min-width: 1581px) {
+    .image-grid li {width: 25%}
+	.page-node-18 .body-wrap.locations .grid-4 img, .page-node-123 .body-wrap.locations .grid-4 img{ width:100%;}
+ }
+    
+            

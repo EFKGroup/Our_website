@@ -1,0 +1,10 @@
+drwxr-xr-x   2 ctmove   psacln       4096 Sep 23 07:41 .
+drwxr-xrwx  98 ctmove   psacln       4096 Nov 30 09:56 ..
+-rw-r--r--   1 ctmove   psacln      18092 Sep 23 07:41 LICENSE.txt
+-rw-r--r--   1 ctmove   psacln       2435 Sep 23 07:41 README.txt
+-rw-r--r--   1 ctmove   psacln       4664 Sep 23 07:41 strongarm.admin.inc
+-rw-r--r--   1 ctmove   psacln        110 Sep 23 07:41 strongarm.css
+-rw-r--r--   1 ctmove   psacln       1053 Sep 23 07:41 strongarm.drush.inc
+-rw-r--r--   1 ctmove   psacln        387 Sep 23 07:41 strongarm.info
+-rw-r--r--   1 ctmove   psacln        838 Sep 23 07:41 strongarm.install
+-rw-r--r--   1 ctmove   psacln       6619 Sep 23 07:41 strongarm.module

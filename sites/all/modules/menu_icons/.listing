@@ -1,0 +1,8 @@
+drwxr-xr-x   2 ctmove   psacln       4096 Aug 11 12:27 .
+drwxr-xrwx  98 ctmove   psacln       4096 Nov 30 09:56 ..
+-rw-r--r--   1 ctmove   psacln      18092 Aug 10 07:04 LICENSE.txt
+-rw-r--r--   1 ctmove   psacln       1363 Aug 10 07:04 README.txt
+-rw-r--r--   1 ctmove   psacln        423 Aug 10 07:04 menu_icons.info
+-rw-r--r--   1 ctmove   psacln       1615 Aug 10 07:04 menu_icons.install
+-rw-r--r--   1 ctmove   psacln      22124 Aug 10 07:04 menu_icons.module
+-rw-r--r--   1 ctmove   psacln        411 Aug 10 07:04 menu_icons_css_item.tpl.php

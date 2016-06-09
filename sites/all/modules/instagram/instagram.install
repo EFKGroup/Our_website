@@ -1,0 +1,27 @@
+<?php
+/**
+ * @file
+ * Install file for the Instagram module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function instagram_install() {
+  variable_set('instagram_client_id', '');
+  variable_set('instagram_client_secret', '');
+  variable_set('instagram_verify_token', substr(md5(rand()), 0, 7));
+  variable_set('instagram_update_history', array());
+  variable_set('instagram_sync_max', 100);
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function instagram_uninstall() {
+  variable_del('instagram_client_id');
+  variable_del('instagram_client_secret');
+  variable_del('instagram_verify_token');
+  variable_del('instagram_update_history');
+  variable_del('instagram_sync_max');
+}

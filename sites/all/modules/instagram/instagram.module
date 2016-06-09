@@ -1,0 +1,130 @@
+<?php
+/**
+ * @file
+ * Instagram API Functionality.
+ */
+
+
+/**
+ * Implements hook_menu().
+ */
+function instagram_menu() {
+  $items = array();
+
+  $items['admin/config/services/instagram'] = array(
+    'title' => 'Instagram Realtime',
+    'description' => 'Configure the Instagram API settings.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('instagram_api_settings_form'),
+    'access arguments' => array('administer instagram'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'includes/instagram.admin.inc',
+  );
+
+  $items['admin/config/services/instagram/global'] = array(
+    'title' => 'Global Settings',
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'weight' => -10,
+  );
+
+  $items['admin/config/services/instagram/subscriptions'] = array(
+    'title' => 'Instagram Push Subscriptions',
+    'description' => 'Displays all current Subscriptions.',
+    'page callback' => 'instagram_subscriptions_overview_page',
+    'access arguments' => array('administer instagram'),
+    'type' => MENU_LOCAL_TASK,
+    'weight' => -9,
+    'file' => 'includes/instagram.admin.inc',
+  );
+
+  $items['admin/config/services/instagram/subscriptions/add'] = array(
+    'title' => 'Add Subscription',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('instagram_subcriptions_add'),
+    'access arguments' => array('administer instagram'),
+    'type' => MENU_LOCAL_ACTION,
+    'weight' => -9,
+    'file' => 'includes/instagram.admin.inc',
+  );
+
+  $items['admin/config/services/instagram/subscriptions/reset/%/%'] = array(
+    'title' => 'Reset Subscription Sync History',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('instagram_subcriptions_reset_form', 6, 7),
+    'access arguments' => array('administer instagram'),
+    'file' => 'includes/instagram.admin.inc',
+  );
+
+  $items['admin/config/services/instagram/subscriptions/delete/%/%/%'] = array(
+    'title' => 'Delete Subscription',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('instagram_subcriptions_delete_form', 6, 7, 8),
+    'access arguments' => array('administer instagram'),
+    'file' => 'includes/instagram.admin.inc',
+  );
+
+  $items['admin/instagram/webhook'] = array(
+    'title' => 'Instagram webhooks endpoint',
+    'page callback' => 'instagram_process_webhook',
+    'access callback' => 'instagram_process_webhook_access',
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+/**
+ * Access callback for instagram_process_webhook().
+ *
+ * @string $args
+ */
+function instagram_process_webhook_access() {
+  return TRUE;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function instagram_permission() {
+  return array(
+    'administer instagram' => array(
+      'title' => t('Administer Instagram Settings'),
+    ),
+  );
+}
+
+/**
+ * Process a webhook post from instagram.
+ */
+function instagram_process_webhook() {
+  if (isset($_GET['hub_mode'])) {
+    $mode = $_GET['hub_mode'];
+    $challenge = $_GET['hub_challenge'];
+    $token = $_GET['hub_verify_token'];
+    if ($mode == 'subscribe' && $token == variable_get('instagram_verify_token', '')) {
+      print $challenge;
+      die();
+    }
+  }
+  else {
+    $json = file_get_contents("php://input");
+    $updates = drupal_json_decode($json);
+    $instagram_api = instagram_get_api();
+    foreach ($updates as $data) {
+      $new_media = $instagram_api->getRecent($data['object'], $data['object_id']);
+      module_invoke_all('instagram_process_new', $new_media);
+    }
+  }
+  return NULL;
+}
+
+
+/**
+ * Wrapper around the API constructor.
+ *
+ * @return Instagram
+ *   Returns an Instagram class object.
+ */
+function instagram_get_api() {
+  return new instagram(variable_get('instagram_client_id', ''), variable_get('instagram_client_secret', ''));
+}

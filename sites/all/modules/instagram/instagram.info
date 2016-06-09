@@ -1,0 +1,14 @@
+name = Instagram Realtime
+description = Provides an Instagram API functionality
+version = 7.x-0.1
+core = 7.x
+package = Custom
+
+files[] = includes/instagram.inc
+
+; Information added by Drupal.org packaging script on 2014-07-24
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "instagram"
+datestamp = "1406168928"
+

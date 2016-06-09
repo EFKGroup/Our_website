@@ -1,0 +1,16 @@
+drwxr-xr-x   2 ctmove   psacln       4096 Aug 11 12:28 .
+drwxr-xrwx  98 ctmove   psacln       4096 Nov 30 09:56 ..
+-rw-r--r--   1 ctmove   psacln       6549 Jun  5  2015 API.txt
+-rw-r--r--   1 ctmove   psacln       1970 Jun  5  2015 INSTALL.txt
+-rw-r--r--   1 ctmove   psacln      18092 Jun  5  2015 LICENSE.txt
+-rw-r--r--   1 ctmove   psacln       4050 Jun  5  2015 README.txt
+-rw-r--r--   1 ctmove   psacln      16991 Jun  5  2015 pathauto.admin.inc
+-rw-r--r--   1 ctmove   psacln       2062 Jun  5  2015 pathauto.api.php
+-rw-r--r--   1 ctmove   psacln      24410 Jun  5  2015 pathauto.inc
+-rw-r--r--   1 ctmove   psacln        422 Jun  5  2015 pathauto.info
+-rw-r--r--   1 ctmove   psacln       5720 Jun  5  2015 pathauto.install
+-rw-r--r--   1 ctmove   psacln        548 Jun  5  2015 pathauto.js
+-rw-r--r--   1 ctmove   psacln      26531 Jun  5  2015 pathauto.module
+-rw-r--r--   1 ctmove   psacln      13504 Jun  5  2015 pathauto.pathauto.inc
+-rw-r--r--   1 ctmove   psacln      31191 Jun  5  2015 pathauto.test
+-rw-r--r--   1 ctmove   psacln       1185 Jun  5  2015 pathauto.tokens.inc

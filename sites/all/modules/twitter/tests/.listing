@@ -1,0 +1,6 @@
+drwxr-xr-x   2 ctmove   psacln       4096 Sep 24 11:07 .
+drwxr-xr-x   7 ctmove   psacln       4096 Sep 24 11:07 ..
+-rw-r--r--   1 ctmove   psacln       2821 Sep 24 11:07 core.test
+-rw-r--r--   1 ctmove   psacln       2522 Sep 24 11:07 input_filters.test
+-rw-r--r--   1 ctmove   psacln        315 Sep 24 11:07 twitter_mock.info
+-rw-r--r--   1 ctmove   psacln       7741 Sep 24 11:07 twitter_mock.module

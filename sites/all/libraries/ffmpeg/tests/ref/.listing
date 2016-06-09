@@ -1,0 +1,10 @@
+drwxr-xr-x  10 ctmove   psacln       4096 Aug 31 04:23 .
+drwxr-xr-x   5 ctmove   psacln       4096 Aug 31 04:24 ..
+drwxr-xr-x   2 ctmove   psacln       4096 Aug 31 04:10 acodec
+drwxr-xr-x   2 ctmove   psacln      86016 Aug 31 04:15 fate
+drwxr-xr-x   2 ctmove   psacln       4096 Aug 31 04:17 lavf
+drwxr-xr-x   2 ctmove   psacln       4096 Aug 31 04:17 lavf-fate
+drwxr-xr-x   2 ctmove   psacln       4096 Aug 31 04:18 seek
+drwxr-xr-x   2 ctmove   psacln      20480 Aug 31 04:23 vsynth
+drwxr-xr-x   2 ctmove   psacln       4096 Aug 31 04:23 vsynth1
+drwxr-xr-x   2 ctmove   psacln       4096 Aug 31 04:23 vsynth_lena

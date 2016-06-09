@@ -1,0 +1,12 @@
+drwxr-xr-x   2 ctmove   psacln       4096 Nov  6 13:02 .
+drwxr-xr-x   5 ctmove   psacln       4096 Nov  6 13:02 ..
+-rw-r--r--   1 ctmove   psacln        165 Nov  6 13:02 views-slideshow-controls-text-next.tpl.php
+-rw-r--r--   1 ctmove   psacln        168 Nov  6 13:02 views-slideshow-controls-text-pause.tpl.php
+-rw-r--r--   1 ctmove   psacln        173 Nov  6 13:02 views-slideshow-controls-text-previous.tpl.php
+-rw-r--r--   1 ctmove   psacln        246 Nov  6 13:02 views-slideshow-controls-text.tpl.php
+-rw-r--r--   1 ctmove   psacln        522 Nov  6 13:02 views-slideshow-pager-field-field.tpl.php
+-rw-r--r--   1 ctmove   psacln        220 Nov  6 13:02 views-slideshow-pager-field-item.tpl.php
+-rw-r--r--   1 ctmove   psacln        118 Nov  6 13:02 views-slideshow-pager-fields.tpl.php
+-rw-r--r--   1 ctmove   psacln        227 Nov  6 13:02 views-slideshow-slide-counter.tpl.php
+-rw-r--r--   1 ctmove   psacln        806 Nov  6 13:02 views-slideshow.tpl.php
+-rw-r--r--   1 ctmove   psacln      13370 Nov  6 13:02 views_slideshow.theme.inc

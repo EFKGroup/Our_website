@@ -1,0 +1,5 @@
+drwxr-xr-x   2 ctmove   psacln       4096 Aug 30 20:31 .
+drwxr-xr-x   9 ctmove   psacln       4096 Aug 30 20:31 ..
+-rw-r--r--   1 ctmove   psacln        118 Mar 13  2015 head
+-rw-r--r--   1 ctmove   psacln       1154 Mar 13  2015 main.c
+-rw-r--r--   1 ctmove   psacln         86 Mar 13  2015 printf

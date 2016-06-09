@@ -1,0 +1,5 @@
+name = Edge Suite
+description = "Import, manage and configure Edge Animate compositions."
+core = 7.x
+dependencies[] = entity
+files[] = includes/edge_suite_comp_builder.inc

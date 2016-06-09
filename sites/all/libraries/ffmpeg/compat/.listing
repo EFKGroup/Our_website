@@ -1,0 +1,14 @@
+drwxr-xr-x   9 ctmove   psacln       4096 Aug 30 20:31 .
+drwxr-xr-x  16 ctmove   psacln       4096 Aug 31 04:24 ..
+drwxr-xr-x   2 ctmove   psacln       4096 Aug 30 20:31 aix
+drwxr-xr-x   4 ctmove   psacln       4096 Aug 30 20:31 avisynth
+drwxr-xr-x   2 ctmove   psacln       4096 Aug 30 20:31 float
+-rw-r--r--   1 ctmove   psacln       2470 Jun 19  2015 getopt.c
+drwxr-xr-x   2 ctmove   psacln       4096 Aug 30 20:31 msvcrt
+-rw-r--r--   1 ctmove   psacln       3752 Jun 19  2015 os2threads.h
+drwxr-xr-x   2 ctmove   psacln       4096 Aug 30 20:31 plan9
+-rw-r--r--   1 ctmove   psacln       2778 Mar 14  2015 strtod.c
+drwxr-xr-x   2 ctmove   psacln       4096 Aug 30 20:31 tms470
+-rw-r--r--   1 ctmove   psacln       1064 Jun 18  2015 va_copy.h
+-rw-r--r--   1 ctmove   psacln       9377 Jun 19  2015 w32pthreads.h
+drwxr-xr-x   2 ctmove   psacln       4096 Aug 30 20:31 windows

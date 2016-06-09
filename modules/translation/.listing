@@ -1,0 +1,7 @@
+drwxr-xr-x   3 ctmove   psacln       4096 Aug 11 12:00 .
+drwxr-xr-x  42 ctmove   psacln       4096 Aug 11 12:00 ..
+drwxr-xr-x   2 ctmove   psacln       4096 Aug 11 12:00 tests
+-rw-r--r--   1 ctmove   psacln        322 Aug 11 12:00 translation.info
+-rw-r--r--   1 ctmove   psacln      23404 Aug 11 12:00 translation.module
+-rw-r--r--   1 ctmove   psacln       3278 Aug 11 12:00 translation.pages.inc
+-rw-r--r--   1 ctmove   psacln      22087 Aug 11 12:00 translation.test

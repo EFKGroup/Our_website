@@ -1,0 +1,12 @@
+drwxr-xr-x   4 ctmove   psacln       4096 Nov  4 11:31 .
+drwxr-xr-x   3 ctmove   psacln       4096 Nov 19 08:20 ..
+-rw-r--r--   1 ctmove   psacln       6400 Nov  4 11:31 .DS_Store.bin
+-rw-r--r--   1 ctmove   psacln        641 Nov  4 11:31 GETTING_STARTED.html
+-rw-r--r--   1 ctmove   psacln        389 Nov  4 11:31 JavaScript_docs.html
+-rw-r--r--   1 ctmove   psacln       9664 Nov  4 11:31 TimelineLite.min.js
+-rw-r--r--   1 ctmove   psacln      16511 Nov  4 11:31 TimelineMax.min.js
+-rw-r--r--   1 ctmove   psacln      22874 Nov  4 11:31 TweenLite.min.js
+-rw-r--r--   1 ctmove   psacln      91878 Nov  4 11:31 TweenMax.min.js
+drwxr-xr-x   2 ctmove   psacln       4096 Nov  4 11:31 easing
+-rw-r--r--   1 ctmove   psacln       2656 Nov  4 11:31 jquery.gsap.min.js
+drwxr-xr-x   2 ctmove   psacln       4096 Nov  4 11:31 plugins
