@@ -123,8 +123,9 @@ $content = $view->style_plugin->rendered_fields;
                         }
                     });
 
-                    $('#ri-grid ul>li>a').click(function(evt){
-                        evt.preventDefault();
-                    });
+		    // Don't allow link out
+                    //$('#ri-grid ul>li>a').click(function(evt){
+                    //    evt.preventDefault();
+                    //});
                 };
             </script>
